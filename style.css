@@ -24,10 +24,6 @@ button:hover{
 .center{
     text-align: center;
 }
-
-.sheet.full .content{
-    border-radius: 0;
-}
 .sheet .overlay{
     position: fixed;
     top: 0;
@@ -99,6 +95,9 @@ button:hover{
 #bsheet.dragging .content{
     transition: none;
 }
+#bsheet.full .content{
+    border-radius: 0;
+}
 
 /* top */
 
@@ -127,7 +126,7 @@ button:hover{
 }
 #tsheet .content{
     background: #fff;
-    border-radius: 15px 15px 0 0;
+    border-radius: 0 0 15px 15px;
     display: flex;
     align-items: center;
     flex-direction: column-reverse;
@@ -141,4 +140,7 @@ button:hover{
 }
 #tsheet.appear .content{
     transform: translateY(0%);
+}
+#tsheet.full .content{
+    border-radius: 0;
 }
