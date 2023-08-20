@@ -44,17 +44,29 @@ button:hover{
     margin: 15px 0;
     cursor: grab;
 }
+.sheet .dragv{
+    background-color: #a0a0a0;
+    user-select: none;
+    height: 50px;
+    border-radius: 10px;
+    width: 5px;
+    margin: 0 15px;
+    cursor: grab;
+}
 .sheet .text{
-    overflow-y: auto;
+    overflow-y: scroll;
     height: 100%;
+    width: 95%;
     scrollbar-width: none;
-    padding: 0 25px;
+    padding: 0 20px;
     text-align: justify;
 }
 .sheet .text::-webkit-scrollbar{
     width: 0;
 }
+
 /* bottom */
+
 #bsheet{
     display: flex;
     align-items: center;
@@ -78,7 +90,6 @@ button:hover{
     flex-direction: column;
     justify-content: end;
     margin: 0;
-    height: 50%;
     max-height: 100%;
     position: relative;
     transform: translateY(100%);
@@ -132,8 +143,6 @@ button:hover{
     flex-direction: column-reverse;
     justify-content: end;
     margin: 0;
-    height: 50%;
-    max-height: 100%;
     position: relative;
     transform: translateY(-200%);
     transition: 0.3s ease;
@@ -142,5 +151,93 @@ button:hover{
     transform: translateY(0%);
 }
 #tsheet.full .content{
+    border-radius: 0;
+}
+
+/* right */
+
+#rsheet{
+    display: flex;
+    height: 100%;
+    align-items: end;
+    justify-content: end;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    transition: 0.1s linear;
+}
+#rsheet.appear{
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+}
+#rsheet.dragging .content{
+    transition: none;
+}
+#rsheet .content{
+    background: #fff;
+    border-radius: 15px 0 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 0;
+    height: 100%;
+    position: relative;
+    transform: translateX(200%);
+    transition: 0.3s ease;
+}
+#rsheet.appear .content{
+    transform: translateY(0%);
+}
+#rsheet.full .content{
+    border-radius: 0;
+}
+
+/* left */
+
+#lsheet{
+    display: flex;
+    height: 100%;
+    align-items: end;
+    justify-content: start;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    transition: 0.1s linear;
+}
+#lsheet.appear{
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+}
+#lsheet.dragging .content{
+    transition: none;
+}
+#lsheet .content{
+    background: #fff;
+    border-radius: 0 15px 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 0;
+    height: 100%;
+    position: relative;
+    transform: translateX(-100%);
+    transition: 0.3s ease;
+}
+#lsheet.appear .content{
+    transform: translateY(0%);
+}
+#lsheet.full .content{
     border-radius: 0;
 }
